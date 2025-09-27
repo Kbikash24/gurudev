@@ -5,13 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -22,5 +15,432 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Spiritual Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-1deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sacred-glow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(249, 115, 22, 0.6), 0 0 70px rgba(220, 38, 38, 0.3);
+  }
+}
+
+@keyframes mandala-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Om symbol specific animations */
+@keyframes om-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.4));
+    transform: scale(1);
+  }
+  25% {
+    filter: drop-shadow(0 0 25px rgba(245, 101, 101, 0.6));
+    transform: scale(1.02);
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(251, 191, 36, 0.8));
+    transform: scale(1.05);
+  }
+  75% {
+    filter: drop-shadow(0 0 25px rgba(245, 101, 101, 0.6));
+    transform: scale(1.02);
+  }
+}
+
+@keyframes om-breathe {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.03) rotate(1deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08) rotate(0deg);
+    opacity: 0.95;
+  }
+  75% {
+    transform: scale(1.03) rotate(-1deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes energy-flow {
+  0% {
+    transform: translate(-1px, -1px) rotate(0deg) translateX(80px) rotate(0deg);
+    opacity: 1;
+    scale: 0.5;
+  }
+  25% {
+    opacity: 0.8;
+    scale: 1;
+  }
+  50% {
+    opacity: 0.6;
+    scale: 1.2;
+  }
+  75% {
+    opacity: 0.4;
+    scale: 0.8;
+  }
+  100% {
+    transform: translate(-1px, -1px) rotate(360deg) translateX(80px) rotate(-360deg);
+    opacity: 0.2;
+    scale: 0.3;
+  }
+}
+
+@keyframes sacred-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes divine-rotation {
+  0% {
+    transform: rotate(0deg);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+  25% {
+    border-color: rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-color: rgba(245, 101, 101, 0.3);
+  }
+  75% {
+    border-color: rgba(251, 191, 36, 0.4);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-om-glow {
+  animation: om-glow 3s ease-in-out infinite;
+}
+
+.animate-om-breathe {
+  animation: om-breathe 4s ease-in-out infinite;
+}
+
+.animate-energy-flow {
+  animation: energy-flow 6s linear infinite;
+}
+
+/* Custom delay classes */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+/* Spiritual Answer Content Styling */
+.spiritual-answer-content {
+  color: inherit;
+  max-width: none;
+  font-family: inherit;
+}
+
+.spiritual-answer-content h1 {
+  color: #ea580c !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  background: linear-gradient(135deg, #ea580c, #dc2626) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.spiritual-answer-content h2 {
+  color: #f97316 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  position: relative;
+}
+
+.spiritual-answer-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ea580c, #dc2626);
+  border-radius: 2px;
+}
+
+.spiritual-answer-content h3 {
+  color: #f59e0b !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.spiritual-answer-content p {
+  margin-bottom: 1.25rem !important;
+  line-height: 1.8 !important;
+  color: #374151 !important;
+  font-size: 1.1rem !important;
+}
+
+.spiritual-answer-content ul, .spiritual-answer-content ol {
+  margin-bottom: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.spiritual-answer-content li {
+  margin-bottom: 0.75rem !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+}
+
+.spiritual-answer-content a {
+  color: #ea580c !important;
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+.spiritual-answer-content a:hover {
+  color: #dc2626 !important;
+}
+
+.spiritual-answer-content .section {
+  background: linear-gradient(135deg, #fed7aa, #fecaca) !important;
+  border: 2px solid #fb923c !important;
+  border-radius: 1rem !important;
+  padding: 2rem !important;
+  margin: 2rem 0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.spiritual-answer-content .content {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 1.5rem !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.spiritual-answer-content .media-embed {
+  margin: 2.5rem 0 !important;
+  text-align: center !important;
+}
+
+.spiritual-answer-content iframe {
+  max-width: 100% !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  border: 3px solid transparent !important;
+  background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #ea580c, #dc2626) border-box !important;
+}
+
+.spiritual-answer-content .error {
+  background: linear-gradient(135deg, #fee2e2, #fecaca) !important;
+  color: #dc2626 !important;
+  padding: 1.5rem !important;
+  border-radius: 1rem !important;
+  border: 2px solid #f87171 !important;
+  font-weight: 500 !important;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #fed7aa, #fecaca);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #fb923c, #ea580c);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #f97316, #dc2626);
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .spiritual-answer-content iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+  
+  .spiritual-answer-content h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  .spiritual-answer-content h2 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c4b5fd, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a78bfa, #7c3aed);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus, input:focus {
+  outline: 2px solid #ea580c;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
