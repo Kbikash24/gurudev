@@ -367,13 +367,13 @@ export default function Home() {
                               <div className="absolute inset-20 rounded-full border-2 border-red-400/20 animate-ping" style={{ animationDuration: '3s', animationDelay: '2s' }}></div>
                             </div>
                           </div>
-                          <h3 className="text-3xl font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6">ॐ Channeling Divine Wisdom ॐ</h3>
-                          <p className="text-gray-600 text-lg max-w-md mx-auto leading-relaxed">Your answer is flowing through the sacred vibrations of Om...</p>
+                          {/* <h3 className="text-3xl font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6">ॐ Channeling Divine Wisdom ॐ</h3> */}
+                          <p className="text-gray-600 text-lg max-w-md mx-auto leading-relaxed">Getting your Answer...</p>
                         </div>
                       ) : (
                         <div className="p-8">
                           <div className="mb-6">
-                            <h3 className="text-2xl font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">🕉️ Sacred Guidance</h3>
+                            
                             <div className="h-1 w-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full "></div>
                           </div>
                           <div
